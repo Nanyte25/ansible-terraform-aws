@@ -2,14 +2,9 @@ provider "aws" {
   region = "${var.aws_region}"
 }
 
-// Use your own HAProxy AMI
+// My Own Custom Haproxy AMI
 data "aws_ami" "haproxy_aws_amis" {
   most_recent = true
-
-//  filter {
-//    name   = "product-code"
-//    values = ["483gxnuft87jy44d3q8n4kvt1"]
-//  }
 
   filter {
     name   = "name"
