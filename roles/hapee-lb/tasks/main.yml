@@ -1,0 +1,12 @@
+- name: generate new HAProxy LB configuration
+  template:
+    src: haproxy-lb.cfg.j2
+    dest: /etc/haproxy/haproxy.cfg
+    mode: 0664
+    owner: root
+    group: haproxy
+
+- name: restart HAProxy LB service
+  systemd:
+    name: haproxy
+    state: restarted
